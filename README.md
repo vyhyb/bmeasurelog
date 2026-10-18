@@ -3,7 +3,7 @@
 A small GNOME app that listens to a Bluetooth laser distance meter, keeps the
 last 10 readings, and copies the newest one to the clipboard.
 
-<!-- TODO: add a screenshot here once the app has an icon -->
+![Screenshot](docs/screenshot.png)
 
 ## Why
 

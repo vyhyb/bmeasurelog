@@ -89,7 +89,7 @@ class BleConnection(threading.Thread):
             except asyncio.CancelledError:
                 raise
             except Exception as exc:  # BlueZ errors, adapter off, ...
-                log.warning("BLE error: %s", exc)
+                log.warning("BLE error: %r", exc, exc_info=log.isEnabledFor(logging.DEBUG))
                 self._on_state(ConnectionState.LOST, None)
             try:
                 await asyncio.wait_for(self._wake.wait(), self.RETRY_DELAY)
