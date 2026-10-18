@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bmeasurelog"
+version = "0.2.0"
+description = "Log and copy readings from Bluetooth laser distance meters (GNOME). Currently tested on Bosch AdvancedDistance 50C"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["bleak>=0.21"]  # PyGObject, GTK 4 and libadwaita come from your distribution
+classifiers = [
+    "Environment :: X11 Applications :: GTK",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+bmeasurelog = "bmeasurelog.ui.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
