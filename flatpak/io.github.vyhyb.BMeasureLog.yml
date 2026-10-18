@@ -22,7 +22,6 @@ modules:
       - install -Dm644 flatpak/io.github.vyhyb.BMeasureLog.desktop -t /app/share/applications
       - install -Dm644 data/icons/hicolor/scalable/apps/io.github.vyhyb.BMeasureLog.svg -t /app/share/icons/hicolor/scalable/apps
       - install -Dm644 flatpak/io.github.vyhyb.BMeasureLog.metainfo.xml -t /app/share/metainfo
-      - sed -i "s/@VERSION@/$(sed -n 's/^__version__ = \"\\(.*\\)\"/\\1/p' src/bmeasurelog/__init__.py)/; s/@DATE@/$(date +%F)/" /app/share/metainfo/io.github.vyhyb.BMeasureLog.metainfo.xml
     sources:
       - type: dir
         path: ..

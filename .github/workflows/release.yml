@@ -21,12 +21,16 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Check tag matches __version__
+      - name: Check tag matches __version__ and metainfo
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
           version=$(sed -n 's/^__version__ = "\(.*\)"/\1/p' src/bmeasurelog/__init__.py)
           if [ "v$version" != "$GITHUB_REF_NAME" ]; then
             echo "Tag $GITHUB_REF_NAME does not match __version__ $version" >&2
+            exit 1
+          fi
+          if ! grep -q "<release version=\"$version\"" flatpak/io.github.vyhyb.BMeasureLog.metainfo.xml; then
+            echo "metainfo has no <release> entry for $version" >&2
             exit 1
           fi
 
