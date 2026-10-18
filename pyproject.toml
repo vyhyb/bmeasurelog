@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bmeasurelog"
-version = "0.2.0"
+version = "0.1.0"
 description = "Log and copy readings from Bluetooth laser distance meters (GNOME). Currently tested on Bosch AdvancedDistance 50C"
 readme = "README.md"
 requires-python = ">=3.10"

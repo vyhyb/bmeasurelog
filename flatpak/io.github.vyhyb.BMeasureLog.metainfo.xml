@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.vyhyb.BMeasureLog</id>
+  <name>BMeasureLog</name>
+  <summary>Log readings from Bluetooth laser distance meters</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <url type="homepage">https://github.com/vyhyb/bmeasurelog</url>
+  <description>
+    <p>Listens to a Bluetooth laser distance meter, keeps a history of readings and lets you copy them.</p>
+  </description>
+  <launchable type="desktop-id">io.github.vyhyb.BMeasureLog.desktop</launchable>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.2.0" date="2026-10-18"/>
+  </releases>
+</component>

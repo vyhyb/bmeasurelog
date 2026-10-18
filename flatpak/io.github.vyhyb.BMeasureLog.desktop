@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=BMeasureLog
+Comment=Log readings from Bluetooth laser distance meters
+Exec=bmeasurelog
+Icon=bluetooth-active-symbolic
+Terminal=false
+Categories=Utility;GTK;GNOME;
