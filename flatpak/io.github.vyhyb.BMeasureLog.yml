@@ -26,6 +26,7 @@ modules:
     build-commands:
       - pip3 install --prefix=/app --no-deps --no-build-isolation --no-cache-dir .
       - install -Dm644 flatpak/io.github.vyhyb.BMeasureLog.desktop -t /app/share/applications
+      - install -Dm644 data/icons/hicolor/scalable/apps/io.github.vyhyb.BMeasureLog.svg -t /app/share/icons/hicolor/scalable/apps
       - install -Dm644 flatpak/io.github.vyhyb.BMeasureLog.metainfo.xml -t /app/share/metainfo
     sources:
       - type: dir

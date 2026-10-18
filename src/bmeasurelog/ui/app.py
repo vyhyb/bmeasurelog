@@ -6,12 +6,13 @@ from __future__ import annotations
 import logging
 import os
 import sys
+from pathlib import Path
 
 import gi
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Adw, Gio, Gtk  # noqa: E402
+from gi.repository import Adw, Gdk, Gio, Gtk  # noqa: E402
 
 from .. import APP_ID, APP_NAME, __version__  # noqa: E402
 from ..settings import Settings  # noqa: E402
@@ -25,6 +26,11 @@ class BMeasureLogApp(Adw.Application):
 
     def do_startup(self) -> None:
         Adw.Application.do_startup(self)
+        # Source checkouts are not installed into an icon theme path.
+        icons = Path(__file__).resolve().parents[3] / "data" / "icons"
+        if icons.is_dir():
+            Gtk.IconTheme.get_for_display(Gdk.Display.get_default()).add_search_path(str(icons))
+        Gtk.Window.set_default_icon_name(APP_ID)
         for name, callback in (("about", self._show_about), ("quit", lambda *_: self.quit())):
             action = Gio.SimpleAction.new(name, None)
             action.connect("activate", callback)
@@ -42,7 +48,7 @@ class BMeasureLogApp(Adw.Application):
     def _show_about(self, *_) -> None:
         Adw.AboutDialog(
             application_name=APP_NAME,
-            application_icon="bluetooth-active-symbolic",
+            application_icon=APP_ID,
             version=__version__,
             comments="Logs readings from Bluetooth laser distance meters.\n\n"
             "Unofficial; not affiliated with or endorsed by Robert Bosch GmbH.",

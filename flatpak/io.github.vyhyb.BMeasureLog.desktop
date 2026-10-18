@@ -3,6 +3,6 @@ Type=Application
 Name=BMeasureLog
 Comment=Log readings from Bluetooth laser distance meters
 Exec=bmeasurelog
-Icon=bluetooth-active-symbolic
+Icon=io.github.vyhyb.BMeasureLog
 Terminal=false
 Categories=Utility;GTK;GNOME;
