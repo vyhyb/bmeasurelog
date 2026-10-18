@@ -6,12 +6,27 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <url type="homepage">https://github.com/vyhyb/bmeasurelog</url>
+  <url type="bugtracker">https://github.com/vyhyb/bmeasurelog/issues</url>
+  <developer id="io.github.vyhyb">
+    <name>BMeasureLog contributors</name>
+  </developer>
   <description>
-    <p>Listens to a Bluetooth laser distance meter, keeps a history of readings and lets you copy them.</p>
+    <p>BMeasureLog listens to a Bluetooth laser distance meter, keeps a history of readings and lets you copy them with one click or shortcut.</p>
+    <p>Currently tested with the Bosch AdvancedDistance 50C. This is an unofficial app, not affiliated with or endorsed by Robert Bosch GmbH.</p>
   </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/vyhyb/bmeasurelog/main/docs/screenshot.png</image>
+      <caption>Reading history</caption>
+    </screenshot>
+  </screenshots>
+  <branding>
+    <color type="primary" scheme_preference="light">#99c1f1</color>
+    <color type="primary" scheme_preference="dark">#1a5fb4</color>
+  </branding>
   <launchable type="desktop-id">io.github.vyhyb.BMeasureLog.desktop</launchable>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release version="0.2.0" date="2026-10-18"/>
+    <release version="@VERSION@" date="@DATE@"/>
   </releases>
 </component>
